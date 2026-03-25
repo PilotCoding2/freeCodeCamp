@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Survey Form</title>
+  </head>
+  <body>
+    <h1 id="title">Los Mochis Tours Survey</h1>
+    <p id="description">Please tell us your experience in Los Mochis.</p>
+    <form id="survey-form">
+        <fieldset>
+            <legend>Your personal information:</legend>
+            <label for="name" id="name-label">Enter your name:</label>
+            <input id="name" type="text" required placeholder="e.g. Juan Orrantia">
+            <label for="email" id="email-label">Enter your email:</label>
+            <input id="email" type="email" required placeholder="email@email.com">
+            <label for="number" id="number-label">Enter your age</label>
+            <input id="number" type="number" min="18" max="100" placeholder="21">
+        </fieldset>
+        <fieldset>
+            <legend>Please tell us about your trip!</legend>
+            <label for="dropdown">How was your experience in Los Mochis?</label>
+                <select id="dropdown">
+                    <option value="meh">Meh</option>
+                    <option value="good">Good</option>
+                    <option value="excellent">Excellent</option>
+                </select>
+        </fieldset>
+        <fieldset>
+            <legend>Would you recommend visiting Los Mochis?</legend>
+            <input type="radio" name="recommend" id="yes-option" value="yes">
+            <label for="yes-option">Yes</label>
+            <input type="radio" name="recommend" id="no-option" value="no">
+            <label for="no-option">No</label>
+        </fieldset>
+        <fieldset>
+            <legend>What did you like most about Los Mochis? Check all that apply:</legend>
+            <input type="checkbox" id="food" value="food" name="choice">
+            <label for="food">Food</label>
+            <input type="checkbox" id="beer" value="beer" name="choice">
+            <label for="beer">Beer</label>
+            <input type="checkbox" id="beach" value="beach" name="choice">
+            <label for="beach">Maviri Beach</label>
+            <input type="checkbox" id="people" value="people" name="choice">
+            <label for="people">People</label>
+        </fieldset>
+        <fieldset>
+            <label for="comments">Please give us additional comments!</label>
+            <textarea id="comments" name="comments" cols="20" rows="20"></textarea>
+        </fieldset>
+        <button type="submit" id="submit">Submit</button>
+    </form>
+  </body>
+</html>
