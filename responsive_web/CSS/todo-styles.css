@@ -12,7 +12,7 @@ main{
     background-color: #FFF5F0;
     border-radius: 10px;
     margin: auto;
-    max-width: 20%;
+    max-width: 300px;
     padding-bottom: 20px;
     margin-top: 100px;
 }
@@ -40,7 +40,7 @@ a{
 .todo-list>li{
     background-color: #8FBC8F;
     max-width: 250px;
-    max-height: 100px;
+    min-height: 100px;
     text-align: center;
     border: 2px solid #8FBC8F;
     border-radius: 5px;
@@ -52,7 +52,7 @@ a{
 
 .sub-item li{
     list-style-position: inside;
-    margin-top: 5px;
+    margin-top: 10px;
     padding-bottom:10px;
     list-style-type:disc;
 }
