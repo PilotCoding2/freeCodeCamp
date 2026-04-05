@@ -1,0 +1,30 @@
+body{
+    background-color: #F4F4F4;
+}
+
+.color-box{
+    height: 100px;
+    width: 100px;
+    display: inline-block;
+    border-radius: 10px;
+}
+
+.color1{
+    background: linear-gradient(#F00, #0FF);
+}
+
+.color2{
+    background-color: rgb(122, 24, 14);
+}
+
+.color3{
+    background-color: blanchedalmond;
+}
+
+.color4{
+    background-color: hsl(200, 80%, 40%);
+}
+
+.color5{
+    background-color: #F34349;
+}

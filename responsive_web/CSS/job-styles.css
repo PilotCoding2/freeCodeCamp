@@ -1,0 +1,128 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: Roboto, sans-serif;
+    background-color: #F8FBF8;
+}
+
+h1{
+    text-align: center;
+    margin: 20px auto 20px auto;
+    color: #1A3A2A;
+}
+
+h2{
+    text-align: center;
+    margin: 20px auto 20px auto;
+    color: #1A3A2A;
+}
+.container{
+    width: 90%;
+    margin: 10px auto 10px auto;
+    background-color: #F8FBF8;
+    border-radius: 10px;
+}
+
+label:not(.radio-label){
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+label{
+    color: #374151;
+}
+
+select, input:not(.radio-btn){
+    display: block;
+    margin: 10px auto 10px auto;
+    width: 90%;
+    height: 30px;
+}
+
+fieldset{
+    border: none;
+    background-color:#F0FDF4;
+    margin: 20px auto 20px auto;
+    width: 85vw;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10px;
+}
+
+.radio-group {
+    text-align: center;
+}
+
+.radio-group label {
+  margin: 0 10px;               
+  cursor: pointer;
+}
+
+textarea{
+    width: 90vw;
+    resize: none;
+    overflow: auto;
+}
+
+input, textarea, select{
+    border: 2px solid #16A34A;
+    border-radius: 5px;
+}
+
+button{
+    display: block;
+    padding: 5px;
+    margin: 0 auto;
+    color: #F8FBF8;
+    background-color: #16A34A;
+    width: 7.5vw;
+    border-radius: 15px;
+    border: #16A34A 2px solid;
+    cursor: pointer;
+}
+
+input:focus, textarea:focus{
+    border: 2px solid #16A34A;
+}
+
+input:user-invalid, select:user-invalid, textarea:user-invalid{
+    border: 2px solid red;
+}
+
+input:valid, select:valid, textarea:valid{
+    border: 2px solid green;
+}
+
+button:hover{
+    background-color: #15803D;
+    border: #15803D 2px solid;
+}
+
+.radio-group input[type="radio"]{
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid gray;
+    vertical-align: bottom;
+}
+
+.radio-group input[type="radio"]:checked{
+    border-color: #16A34A;
+    box-shadow: 0px 5px 2.5px 0 rgba(0, 0, 0, 0.5);
+    background-color: #15803D;
+    
+}
+
+.radio-group input[type="radio"]:checked + label{
+    color: #16A34A;
+}
+
+input:first-of-type{
+    color: #1A3A2A;
+}
+
+ 
