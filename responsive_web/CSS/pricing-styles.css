@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: sans-serif;
+    background: linear-gradient(180deg, #03071e, #370617, #6a040f, #9d0208, #d00000, #dc2f02, #e85d04, #f48c06, #faa307, #ffba08);
+    background: cover;
+    height: 100vh;
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    color: #ffba08;
+}
+
+.pricing-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    
+}
+
+.pricing-card{
+    display: flex;
+    align-content: space-between;
+    flex: 0 0 200px;
+    border: 2px solid black;
+    flex-direction: column;
+    text-align: center;
+    margin: 10px auto;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 5px;
+    background-color: #ffba08;
+    border-radius: 7.5px;
+}
+
+.pricing-card:hover{
+    transform: scale(1.2);
+}
+
+.pricing-card p{
+    margin: 5px auto;
+    font-size: 1.1rem;
+    font-weight: boldk;
+}
+
+.pricing-card hr{
+    border: 1.35px solid black;
+    width: 90%;
+    margin: 2.5px auto;
+}
+
+.basic-plan{
+    order: 0;
+}
+
+.pro-plan{
+    order: 1;
+}
+
+.premium-plan{
+    order: 2;
+}
+
+p.benefits{
+    font-size: 1.1em;
+}
+
+p.cool::before{
+    content: "✓ ";
+    color: rgb(25, 200, 20);
+    font-weight: bolder;    
+}
+
+p.no-cool::before{
+    content: "✗ ";
+    color: rgb(200, 0, 0);
+    font-weight: bolder;
+}
+
+.order-now{
+    width: 80%;
+    margin: 10px auto;
+    padding: 8px;
+    font-weight: bolder;
+    border: none;
+    border-radius: 10px;
+    background-color: #d00000;
+    color: #ffffff;
+}
+
