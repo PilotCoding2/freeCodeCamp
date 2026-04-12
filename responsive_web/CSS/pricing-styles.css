@@ -21,6 +21,9 @@ h1{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    width: 50%;
+    margin: auto;
+    justify-content: space-around;
     
 }
 
@@ -32,8 +35,8 @@ h1{
     flex-direction: column;
     text-align: center;
     margin: 10px auto;
-    justify-content: space-between;
-    align-items: stretch;
+    justify-content: center;
+    align-items: center;
     padding: 5px;
     background-color: #ffba08;
     border-radius: 7.5px;
@@ -92,5 +95,9 @@ p.no-cool::before{
     border-radius: 10px;
     background-color: #d00000;
     color: #ffffff;
+}
+
+.order-now:hover{
+    transform: scale(1.2);
 }
 
