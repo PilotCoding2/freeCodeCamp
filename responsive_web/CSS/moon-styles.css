@@ -1,0 +1,102 @@
+:root{
+    --space-color: #050a1a;
+    --lumin-ocean: #4fc3f7;
+    --main-ocean: #1e88e5;
+    --shadow-ocean: #0d2afe;
+    --continents: #2e7d32;
+    --orbit: #9bb5d4;
+    --moon-base: #c8c8be;
+    --moon-illuminated: #f5f5f0;
+    --moon-shadow: #8a8a80;
+}
+
+body{
+    background-color: var(--space-color);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.space{
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    position: relative;
+
+}
+
+.earth{
+    animation: earth 10s infinite linear;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100px;
+    width: 100px;
+    border: 2px solid var(--main-ocean);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(closest-corner at 70% 30%, var(--lumin-ocean) 20%, var(--main-ocean) 70%, var(--shadow-ocean) 100%);
+}
+
+.orbit{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    border: 2px solid var(--orbit);
+    border-radius: 50%;
+}
+
+.moon{
+    animation: moon 10s infinite linear;
+    transform-origin: 20px 115px;
+    position: absolute;
+    top: -7.5%;
+    left: 40%;
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--moon-base);
+    border-radius: 50%;
+    background: radial-gradient(closest-corner at 30% 30%, var(--moon-base), var(--moon-illuminated), var(--moon-shadow));
+}
+
+@keyframes moon {
+    0%{ 
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(90deg);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    75%{
+        transform: rotate(270deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+    
+}
+
+@keyframes earth {
+    0%{ 
+        background: radial-gradient(closest-corner at 40% 60%, var(--lumin-ocean) 20%, var(--main-ocean) 70%, var(--shadow-ocean) 100%);
+    }
+    25%{
+        background: radial-gradient(closest-corner at 30% 40%, var(--lumin-ocean) 20%, var(--main-ocean) 70%, var(--shadow-ocean) 100%);
+    }
+    50%{
+        background: radial-gradient(closest-corner at 40% 30%, var(--lumin-ocean) 20%, var(--main-ocean) 70%, var(--shadow-ocean) 100%);
+    }
+    75%{
+        background: radial-gradient(closest-corner at 50% 30%, var(--lumin-ocean) 20%, var(--main-ocean) 70%, var(--shadow-ocean) 100%);
+    }
+    100%{
+        background: radial-gradient(closest-corner at 70% 30%, var(--lumin-ocean) 20%, var(--main-ocean) 70%, var(--shadow-ocean) 100%);
+    }
+    
+}

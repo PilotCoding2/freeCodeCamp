@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Product Landing Page</title>
+    <link rel="stylesheet" href="landing-styles.css">
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap" rel="stylesheet">
+
+  </head>
+<body>
+    <header id="header">
+        <img id="header-img" src="/assets/enoe-ml.svg">
+        <nav id="nav-bar">
+            <a class="nav-link" href="#How_It_Works">How It Works</a>
+            <a class="nav-link" href="#The_Used_Model">The Used Model</a>
+            <a class="nav-link" href="#Findings">Findings</a>
+        </nav>
+    </header>
+    <main>
+        <form id="form" action="https://www.freecodecamp.org/email-submit" method="post">
+            <h1 class="form-heading">Want to know more? Subscribe!</h1>
+            <input type="email" id="email" name="email" placeholder="contact@email.com" required>
+            <input type="submit" id="submit">
+        </form>
+        <div id="video-container">
+            <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/i_LwzRVP7bg?si=cgOqpVkQVGloiWOD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <section id="How_It_Works">
+            <h2>How It Works</h2>
+            <div class="card">
+                <h3>What's ENOE?</h3>
+                <p>The <em>Encuesta Nacional de Ocupación y Empleo</em> or ENOE, is a quarterly massive poll conducted by the Mexican Statistic and Geography Institute. On that poll, interviewers asks questions, such as how much the interviewee earns per month, how many hours per week they work, their gender, age, and many more variables. On that regard, the poll's information works wonders to get insightful data about the variables that drive the perceived income of a person.</p>
+            </div>
+            <div class="card">
+                <h3>How do we extract the data?</h3>
+                <p>The INEGI publishes their quarterly data three times a year, which allows us to download it from their website as a csv. We proceed to clean and organize the data, so we can feed it into our machine learning model.</p>
+            </div>
+            <div class="card">
+                <h3>Why do we do this?</h3>
+                <p>we believe that data can lead to actionable insights, but what's the point of making decisions if the studied subject is irrelevant? We wanted to give workers the ability to understand the variables that impact the most on one of the most important subject of their day-to-day lives: their salaries. On that basis, our model returns suggestions that could help improve the user's salary.</p>
+            </div>
+        </section>
+        <section id="The_Used_Model">
+            <h2>The Used Model</h2>
+            <img src="https://miro.medium.com/v2/resize:fit:1200/1*jE1Cb1Dc_p9WEOPMkC95WQ.png">
+            <div class="text-content">
+                <h3>Random Forests and Their Benefits</h3>
+                <p>Common regression models are great - when data is linear. Terribly, most of life events' are not lineal. Enter the decision trees: it's a powerful machine learning model that avoids lineality, because the nodes of the tree represent decisions or tests on attributes, the branches are the outcomes of those nodes and the leafs are the final predictions. And what is a random forest? It's basically a joint of decision trees, all returning different predictions and averaging those predictions, or leading to a majority vote. That way, we avoid the perils of linear regression models while getting great insights.</p>
+            </div>
+        </section>
+        <section id="Findings">
+            <h2>Findings</h2>
+            <div class="finding-cards">
+                <img src="https://studywatches.com/wp-content/uploads/2019/04/3-1.jpg">
+                <h3>Education is the principal income driver</h3>
+                <p>Although education may seem as a high-time investment to some, it is the leading cause of an increase of perceived salary for most workers. Each additional education-year increase leads to an average increase of $50 dollars per month.</p>
+            </div>
+            <div class="finding-cards">
+                <img src="https://as2.ftcdn.net/v2/jpg/04/47/81/77/1000_F_447817786_ahehjPY4tZ2uEqkFdSDr2JPGEWaLNCWf.jpg">
+                <h3>Formal employees tend to earn more</h3>
+                <p>In Mexico, informality is one of the main causes that drag salaries downwards. Workers who're on the formal sector of the economy tend to be higher earners than their peer who're on the informal sector of the economy.</p>
+            </div>
+            <div class="finding-cards">
+                <img src="https://media.istockphoto.com/id/1917054502/photo/labourers-planning-on-site.jpg?s=1024x1024&w=is&k=20&c=gjQY4EHWN74hbh5e6OKLcRMI5C94yTspyms5n7RN79Q=">
+                <h3>Men gross income tends to be higher, but women earn more per hour</h3>
+                <p>Depending on the data granularity, one may think that men are higher earners than women. However, that's partially true. Women tend to earn more than men per hour on average, although men are higher gross earners. This could be correlated to the fact that, on average, men tend to work 2 hours more per week on average.</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Contact Us!</p>
+    </footer>
+</body>
+</html>
