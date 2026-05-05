@@ -36,7 +36,6 @@ body{
     border: 2px solid var(--main-ocean);
     border-radius: 50%;
     transform: translate(-50%, -50%);
-    background: radial-gradient(closest-corner at 70% 30%, var(--lumin-ocean) 20%, var(--main-ocean) 70%, var(--shadow-ocean) 100%);
 }
 
 .orbit{
