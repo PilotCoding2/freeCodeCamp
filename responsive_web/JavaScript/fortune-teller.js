@@ -21,5 +21,4 @@ if(randomNumber === 1){
 }
 
 console.log(selectedFortune);
-let lol = []
 
