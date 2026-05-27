@@ -7,8 +7,61 @@ html{
     font-family: Roboto, sans-serif;
 }
 
+body{
+    background-color: #060A0F;
+}
+
 main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.item-container{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    border: 2px solid #1E2A3A;
+    background-color: #0D1117;
+    max-height: 40vh;
+    max-width: 70vw;
+    padding: 2rem;
+    border-radius: 2.5%;
+}
+
+.item-container h1, .item-container textarea, .item-container p{
+    margin: 1.5rem;
+}
+
+.item-container h1{
+    color: #F0F4FF;
+}
+
+.item-container p{
+    color: #4A8FE7;
+}
+
+textarea{
+    resize: none;
+    width: 30rem;
+    height: 50rem;
+    background-color: #141C28;
+    border: 2px solid #1E2A3A;
+    border-radius: 10px;
+    color: #F0F4FF;
+    font-family: Roboto, sans-serif;
+    padding: 1.5rem;
+    font-size: 1rem;
+}
+
+textarea:focus{
+    outline: none !important;
+    border: 2px solid #4A8FE7;
+}
+
+.item-container p{
+    font-weight: bold;
+    font-size: 1.25rem;
 }
