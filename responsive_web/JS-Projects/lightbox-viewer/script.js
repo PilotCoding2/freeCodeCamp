@@ -5,7 +5,7 @@ const bigImg = document.querySelector('#lightbox-image')
 
 const displayImg = (img) => {
     galleryBigDisp.style.display = 'flex';
-    bigImg.src = img.src;
+    bigImg.src = img.src.replace('-thumbnail', '');
 }
 
 const closeDisplayImg = () => {
@@ -13,9 +13,7 @@ const closeDisplayImg = () => {
     galleryImgs.forEach(img => {
         img.style.display = 'block';
     });
-    
 }
-
 galleryImgs.forEach(img => {
     img.addEventListener("click", () => {
         displayImg(img);
@@ -24,4 +22,8 @@ galleryImgs.forEach(img => {
 
 closeBtn.addEventListener("click", () => {
     closeDisplayImg();
-})
+});
+
+galleryBigDisp.addEventListener("click", () => {
+    closeDisplayImg();
+});
