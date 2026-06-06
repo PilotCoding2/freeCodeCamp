@@ -17,3 +17,15 @@ li {
   text-align: center;
   min-height: 20px;
 }
+
+.theme-tequila{
+  background-color: red;
+}
+
+.theme-dark{
+  background-color: black;
+}
+
+.theme-light{
+  background-color: beige;
+}
