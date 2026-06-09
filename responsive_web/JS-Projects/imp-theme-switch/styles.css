@@ -1,0 +1,32 @@
+body{
+    transition: 0.3s;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1{
+    text-align: center;
+    padding-top: 5rem;
+    font-size: 7.5rem;
+}
+
+#color-btn{
+    display: block;
+    margin: 5% auto;
+    font-size: 50px;
+    border-radius: 10px;
+    font-family: 'Roboto', sans-serif;
+    transition: 0.3s;
+    padding: 0.75rem;
+}
+
+#color-btn:active{
+    box-shadow: 0 10px 5px rgba(0, 0, 0, 0.3);
+}
+
+.your-color{
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 3rem;
+    line-height: 5rem;
+    font-weight: 600;
+}
