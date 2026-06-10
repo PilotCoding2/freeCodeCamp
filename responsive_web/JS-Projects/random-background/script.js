@@ -17,7 +17,7 @@ const darkColorsArr = [
   }
   console.log(getRandomIndex());
   
-  const body = document.body;
+  const body = document.querySelector('body');
   const bgHexCodeSpanElement = document.getElementById("bg-hex-code");
   console.log(bgHexCodeSpanElement)
   
@@ -30,6 +30,4 @@ const darkColorsArr = [
   const btn = document.querySelector(".btn");
   console.log(btn)
   
-  btn.addEventListener("click", () => {
-    changeBackgroundColor();
-  });
+  btn.addEventListener("click", changeBackgroundColor);
