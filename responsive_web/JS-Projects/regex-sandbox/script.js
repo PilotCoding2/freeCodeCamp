@@ -30,4 +30,9 @@ const getMatches = () => {
     }
 }
 
-testButton.addEventListener('click', getMatches);
+testButton.addEventListener('click', () => {
+    if(testResult.innerText !== ''){
+        stringToTest.innerText = '';
+    }
+    getMatches();
+});
