@@ -1,0 +1,43 @@
+*, ::before, ::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --fCC-background: #0a0a23;
+    --font-color: #ffffff;
+}
+
+body{
+    background-color: var(--fCC-background);
+    color: var(--font-color);
+}
+
+img{
+    display: block;
+    margin: auto;
+
+}
+
+h1{
+    text-align: center;
+}
+
+.input-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.input-container p{
+    text-align: center;
+}
+
+.input-btn{
+    display: block;
+    margin: auto;
+}
+
+#result{
+    text-align: center;
+}
