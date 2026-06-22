@@ -3,11 +3,38 @@ const email = document.getElementById('email');
 const orderNumber = document.getElementById('order-no');
 const productCode = document.getElementById('product-code');
 const quantity = document.getElementById('quantity');
+
 const complaintsGroup = document.getElementById('complaints-group');
 const complaintDesc = document.getElementById('complaint-description');
+const complaintDescCont = document.getElementById('complaint-description-container');
+
 const solutionsGroup = document.getElementById('solutions-group');
 const solutionsDesc = document.getElementById('solution-description');
 const submitBtn = document.getElementById('submit-btn');
+const solutionDescCont = document.getElementById('solution-description-container');
+
+const otherComplaint = document.getElementById('other-complaint');
+const otherSolution = document.getElementById('other-solution');
+const inputs = document.querySelectorAll('input, textarea, #complaints-group, #solutions-group');
+
+complaintDescCont.style.display = 'none';
+solutionDescCont.style.display = 'none';
+
+otherComplaint.addEventListener('click', () => {
+    if(complaintDescCont.style.display === 'none'){
+        complaintDescCont.style.display = 'block'
+    } else {
+        complaintDescCont.style.display = 'none'
+    }
+});
+
+solutionsGroup.addEventListener('change', () => {
+    if(otherSolution.checked){
+        solutionDescCont.style.display = 'block';
+    } else {
+        solutionDescCont.style.display = 'none';
+    }
+});
 
 const validateForm = () => {
     const isNameValid = fullName.value !== "";
@@ -44,8 +71,6 @@ const isValid = obj => {
     return objToArr.every(element => element === true);
 }
 
-const inputs = document.querySelectorAll('input, textarea, fieldset');
-
 inputs.forEach(input => input.addEventListener('change', (e) => {
     const validation = validateForm();
     if(validation[e.currentTarget.id] === true){
@@ -55,10 +80,18 @@ inputs.forEach(input => input.addEventListener('change', (e) => {
     }
 }));
 
-submitBtn.addEventListener('submit', () => {
-    let validForm = validateForm();
-    isValid(validForm);
+const form = document.getElementById('form');
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let validation = validateForm();
+    if(isValid(validation)){
+        alert('Form succesfully submitted.');
+    } else {
+        console.log(validation);
+    }
 });
+
 
 
 
