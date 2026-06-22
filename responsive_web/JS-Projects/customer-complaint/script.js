@@ -17,8 +17,12 @@ const otherComplaint = document.getElementById('other-complaint');
 const otherSolution = document.getElementById('other-solution');
 const inputs = document.querySelectorAll('input, textarea, #complaints-group, #solutions-group');
 
+const messageBox = document.getElementById('message-box');
+
 complaintDescCont.style.display = 'none';
 solutionDescCont.style.display = 'none';
+
+
 
 otherComplaint.addEventListener('click', () => {
     if(complaintDescCont.style.display === 'none'){
@@ -88,7 +92,12 @@ form.addEventListener('submit', (e) => {
     if(isValid(validation)){
         alert('Form succesfully submitted.');
     } else {
-        console.log(validation);
+        Object.entries(validation).forEach(([key, value]) => {
+            if(value === false){
+                document.querySelector(`#${key}`).style.border = '2px solid red';
+                messageBox.textContent = 'Please, fill out the required fields correctly before submitting.';
+            }
+        });
     }
 });
 
