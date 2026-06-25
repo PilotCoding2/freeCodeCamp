@@ -4,6 +4,8 @@ const playButton = document.getElementById('play');
 const pauseButton = document.getElementById('pause');
 const nextButton = document.getElementById('next');
 const previousButton = document.getElementById('previous');
+const playingSong = document.getElementById('player-song-title');
+const songArtist = document.getElementById('player-song-artist');
 
 const allSongs = [
   {
@@ -96,6 +98,9 @@ const playSong = (songId, start = true) => {
       audio.currentTime = userData.songCurrentTime;
     }
   playButton.classList.add('playing');
+  setPlayerDisplay();
+  highlightCurrentSong();
+  setPlayButtonAccessibleText();
   userData.currentSong = song;
   audio.play();
 }
@@ -116,6 +121,9 @@ const getPreviousSong = () => {
 
 const playPreviousSong = () => {
   let previous = getPreviousSong();
+  if(userData.currentSong === null){
+    return;
+  }
   if(previous === undefined){
     playSong(userData.songs[0].id);
   } else {
@@ -130,10 +138,42 @@ const playNextSong = () => {
     if(allSongs.indexOf(userData.currentSong) === allSongs.length - 1){
       userData.currentSong = null;
       userData.songCurrentTime = 0;
+      setPlayerDisplay();
+      highlightCurrentSong();
+      setPlayButtonAccessibleText();
       pauseSong();
     } else {
       playSong(getNextSong().id);
     }
+  }
+}
+
+const setPlayerDisplay = () => {
+  if(userData.currentSong){
+    playingSong.textContent = userData.currentSong.title;
+    songArtist.textContent = userData.currentSong.artist;
+  } else {
+    playingSong.textContent = '';
+    songArtist.textContent = '';
+  }
+}
+
+const highlightCurrentSong = () => {
+  const theSong = playlistSongs.querySelector('.playlist-song[aria-current="true"]');
+  if(theSong){
+    theSong.removeAttribute('aria-current');
+  }
+  const songToHighlight = document.getElementById(`song-${userData.currentSong?.id}`);
+  if(songToHighlight){
+    songToHighlight.setAttribute('aria-current', true);
+  }
+}
+
+const setPlayButtonAccessibleText = () => {
+  if(userData.currentSong){
+    playButton.setAttribute('aria-label', `Play ${userData.currentSong.title}`);
+  } else {
+    playButton.setAttribute('aria-label', 'Play');
   }
 }
 
@@ -180,5 +220,6 @@ pauseButton.addEventListener('click', () => {
 
 nextButton.addEventListener('click', playNextSong);
 previousButton.addEventListener('click', playPreviousSong);
+audio.addEventListener("ended", playNextSong);
 
 
