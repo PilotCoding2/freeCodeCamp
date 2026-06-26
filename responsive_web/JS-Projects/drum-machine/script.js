@@ -1,16 +1,36 @@
 const drumPads = document.querySelectorAll('.drum-pad');
-const audio = new Audio();
+const display = document.getElementById('display');
 
-const playDrum = drumId => {
+const playDrumClick = drumId => {
     const drum = Array.from(drumPads).find(drums => drums.id === drumId);
     const soundId = drum.textContent.replace(/\s/g, '');
-    const audioSrc = document.querySelector(`#${soundId}`).getAttribute('src');
-    audio.src = audioSrc;
-    audio.play();
+    const audioSrc = document.querySelector(`#${soundId}`);
+    audioSrc.currentTime = 0;
+    audioSrc.play();
+    showInstrumentName(audioSrc.parentNode.id);
 }
 
-drumPads.forEach(drum =>
+const playDrumKey = e => {
+    const audioSrc = document.querySelector(`#${e.toUpperCase()}`);
+    if(!audioSrc){
+        return;
+    }
+    audioSrc.currentTime = 0;
+    audioSrc.play();
+    showInstrumentName(audioSrc.parentNode.id);
+}
+
+const showInstrumentName = instrumentName => {
+    display.textContent = instrumentName;
+}
+
+drumPads.forEach(drum => {
     drum.addEventListener('click', (e) => {
-        playDrum(e.currentTarget.id);
-    })
-)
+        playDrumClick(e.currentTarget.id);
+    });
+});
+
+
+document.addEventListener('keydown', (event) => {
+    playDrumKey(event.key);
+});
