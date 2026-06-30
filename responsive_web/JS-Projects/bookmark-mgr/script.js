@@ -13,14 +13,14 @@ const deleteBookmarkBtn = document.getElementById('delete-bookmark-button');
 const formName = document.getElementById('name');
 const formUrl = document.getElementById('url');
 
-const bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
-
 const getBookmarks = () => {
-    const bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
-    if(!bookmarks || !Array.isArray(bookmarks) || bookmarks.length === 0){
+    try{
+        const bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+        if(!bookmarks || !Array.isArray(bookmarks) || !bookmarks.every((item) => typeof item === 'object' && 'name' in item && 'category' in item && 'url' in item) || bookmarks.length === 0) return [];
+        return bookmarks;
+    } catch {   
         return [];
     }
-    return bookmarks;
 }
 
 const displayOrCloseForm = () => {
@@ -105,8 +105,3 @@ deleteBookmarkBtn.addEventListener('click', (e) => {
     deleteItem();
     categoryFoundOrNotFound();
 });
-
-
-
-
-
